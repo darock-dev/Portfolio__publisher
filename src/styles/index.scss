@@ -3,4 +3,8 @@
 
 body {
   font-family: $font-main;
+  font-size: 16px;
+  font-weight: $font-normal;
+  color: $text-color;
+  box-sizing: border-box;
 }

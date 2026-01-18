@@ -1,18 +1,19 @@
 import logo from "../../assets/img/common/logo.png";
+import styles from "./Header.module.scss";
 
 export default function Header() {
   return (
-    <header id="header">
-      <div className="inner">
-        <div className="left">
-          <div id="logo">
+    <header className={styles.header}>
+      <div className={styles.inner}>
+        <div className={styles.left}>
+          <div className={styles.logo}>
             <a href="#">
               <img src={logo} alt="로고" />
             </a>
           </div>
         </div>
-        <div className="right">
-          <nav id="nav">
+        <div className={styles.right}>
+          <nav className={styles.nav}>
             <ul>
               <li>
                 <a href="#animation">Animation</a>
@@ -31,7 +32,7 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-          <button className="menu-toggle" type="button">
+          <button className={styles.menuToggle} type="button">
             <span></span>
             <span></span>
             <span></span>
