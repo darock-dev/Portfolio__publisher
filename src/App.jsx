@@ -1,10 +1,10 @@
+import MainLayout from "./components/layout/MainLayout/MainLayout";
 import "./styles/App.scss";
-import Layout from "./components/Layout/Layout";
 
 function App() {
   return (
     <>
-      <Layout></Layout>
+      <MainLayout></MainLayout>
     </>
   );
 }
