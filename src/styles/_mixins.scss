@@ -1,3 +1,5 @@
+@use './variables' as *;
+
 @mixin overlayText {
   position: absolute;
   bottom: 10px;
@@ -5,4 +7,45 @@
   font-size: 14px;
   color: rgba(0, 0, 0, 0.4);
   z-index: 10;
+}
+
+@mixin sectionTitle {
+  font-weight: $font-bold;
+  font-size: 48px;
+  line-height: 68px;
+  color: $text-color;
+  margin-bottom: 36px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 32px;
+    line-height: 44px;
+    margin-bottom: 24px;
+  }
+}
+
+@mixin sectionSubTitle {
+  font-weight: $font-medium;
+  font-size: 20px;
+  line-height: 32px;
+  color: #6A7282;
+  margin-bottom: 120px;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 60px;
+  }
+}
+
+@mixin inner {
+  width: 100%;
+  max-width: $inner-width;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@mixin section {
+  padding: 160px 0;
+
+  @media screen and (max-width: 768px) {
+    padding: 100px 0;
+  }
 }

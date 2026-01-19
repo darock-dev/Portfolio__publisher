@@ -1,4 +1,5 @@
 @use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
 
 .header {
   width: 100%;
@@ -11,8 +12,7 @@
   z-index: 999;
 
   .inner {
-    max-width: $inner-width;
-    margin: 0 auto;
+    @include inner;
     padding: 20px;
     display: flex;
     align-items: center;

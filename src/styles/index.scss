@@ -8,4 +8,5 @@ body {
   color: $text-color;
   box-sizing: border-box;
   letter-spacing: -0.4px;
+  word-break: keep-all;
 }

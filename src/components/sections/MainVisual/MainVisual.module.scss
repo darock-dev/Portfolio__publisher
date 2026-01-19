@@ -27,13 +27,12 @@
   }
 
   .inner {
-    position: relative;
+    @include inner;
     height: 100%;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: $inner-width;
-    margin: 0 auto;
     padding-left: 20px;
 
     .content {

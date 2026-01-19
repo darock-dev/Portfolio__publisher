@@ -24,7 +24,7 @@ export default function Header() {
         >
           <ul>
             <li>
-              <a href="#animation">Animation</a>
+              <a href="#css-animation">CSS Animation</a>
             </li>
             <li>
               <a href="#accordion-menu">Accordion Menu</a>
