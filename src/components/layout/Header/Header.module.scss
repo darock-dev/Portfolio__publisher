@@ -8,9 +8,10 @@
   left: 0;
   right: 0;
   background-color: #fff;
+  z-index: 999;
 
   .inner {
-    max-width: 1280px;
+    max-width: $inner-width;
     margin: 0 auto;
     padding: 20px;
     display: flex;

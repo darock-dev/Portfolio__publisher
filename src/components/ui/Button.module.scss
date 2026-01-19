@@ -1,0 +1,37 @@
+@use '../../styles/variables' as *;
+
+.button {
+  font-weight: $font-semibold;
+  font-size: 20px;
+  padding: 16px 48px;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+
+  @media screen and (max-width: 768px) {
+    padding: 12px 36px;
+    font-size: 16px;
+  }
+}
+
+.blueButton {
+  background-color: $primary-color;
+  color: #fff;
+  border: 1px solid $primary-color;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    border-color: darken($primary-color, 10%);
+  }
+}
+
+.whiteButton {
+  background-color: #fff;
+  color: $primary-color;
+  border: 1px solid $primary-color;
+
+  &:hover {
+    background-color: $primary-color;
+    color: #fff;
+    border-color: $primary-color;
+  }
+}

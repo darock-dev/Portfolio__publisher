@@ -1,0 +1,72 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.mainVisual {
+  position: relative;
+  width: 100%;
+  height: 1024px;
+  margin-top: 61px;
+
+  @media screen and (max-width: 1920px) {
+    height: calc(100vh - 65px);
+  }
+
+  .imgWrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+  }
+
+  .inner {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: $inner-width;
+    margin: 0 auto;
+    padding-left: 20px;
+
+    .content {
+      .subTitle {
+        font-weight: $font-bold;
+        font-size: 36px;
+        margin-bottom: 20px;
+
+        @media screen and (max-width: 768px) {
+          font-size: 24px;
+          margin-bottom: 16px;
+        }
+      }
+
+      .title {
+        font-weight: $font-bold;
+        font-size: 72px;
+        margin-bottom: 64px;
+
+        @media screen and (max-width: 768px) {
+          font-size: 40px;
+          margin-bottom: 38px;
+        }
+
+        span {
+          color: $primary-color;
+        }
+      }
+    }
+
+    p {
+      position: absolute;
+      @include overlayText;
+    }
+  }
+}
