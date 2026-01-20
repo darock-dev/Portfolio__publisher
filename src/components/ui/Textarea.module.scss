@@ -1,0 +1,41 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.textareaWrap {
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    font-weight: $font-bold;
+    font-size: 20px;
+    margin-bottom: 12px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    span {
+      color: $primary-color;
+      margin-left: 4px;
+    }
+  }
+
+  textarea {
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    padding: 20px 16px;
+    font-size: 16px;
+    height: 300px;
+    font-family: $font-main;
+
+    @media screen and (max-width: 768px) {
+      padding: 16px 12px;
+      font-size: 14px;
+      height: 200px;
+    }
+
+    &::placeholder {
+      color: $placeholder-color;
+    }
+  }
+}
