@@ -2,7 +2,7 @@ import styles from "./CssAnimation.module.scss";
 
 export default function CssAnimation() {
   return (
-    <section id="css-animation" className={styles.cssAnimation}>
+    <section id="css-animation-sec" className={styles.cssAnimationSec}>
       <div className={styles.inner}>
         <div className={styles.titleWrap}>
           <h2 className={styles.title}>

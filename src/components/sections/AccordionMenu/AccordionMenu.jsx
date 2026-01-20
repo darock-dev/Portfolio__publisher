@@ -35,7 +35,7 @@ export default function AccordionMenu() {
   // 아코디언 메뉴 클릭 이벤트
   const onClickAccordionMenu = (e) => {
     const clickMenu = e.currentTarget;
-    const allMenu = document.querySelectorAll(`#accordion-menu .${styles.menu}`);
+    const allMenu = document.querySelectorAll(`#accordion-menu-sec .${styles.menu}`);
 
     // 모든 메뉴를 순회하면서 클릭된 메뉴가 아니면 닫기
     allMenu.forEach((item) => {
@@ -48,7 +48,7 @@ export default function AccordionMenu() {
   };
 
   return (
-    <section id="accordion-menu" className={styles.accordionMenu}>
+    <section id="accordion-menu-sec" className={styles.accordionMenuSec}>
       <div className={styles.inner}>
         <div className={styles.titleWrap}>
           <h2 className={styles.title}>

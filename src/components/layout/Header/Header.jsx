@@ -24,19 +24,19 @@ export default function Header() {
         >
           <ul>
             <li>
-              <a href="#css-animation">CSS Animation</a>
+              <a href="#css-animation-sec">CSS Animation</a>
             </li>
             <li>
-              <a href="#accordion-menu">Accordion Menu</a>
+              <a href="#accordion-menu-sec">Accordion Menu</a>
             </li>
             <li>
               <a href="#slide-sec">Slide</a>
             </li>
             <li>
-              <a href="#form">Form</a>
+              <a href="#form-sec">Form</a>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <a href="#contact-sec">Contact</a>
             </li>
           </ul>
         </nav>
