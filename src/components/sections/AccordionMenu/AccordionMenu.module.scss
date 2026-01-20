@@ -29,9 +29,15 @@
       border-bottom: 1px solid $border-color;
       cursor: pointer;
 
+      @media screen and (max-width: 1024px) {
+        padding: 24px 10px;
+
+      }
+
       .title {
         position: relative;
-        font-size: 32px;
+        padding-right: 30px;
+        font-size: 28px;
         font-weight: $font-bold;
 
         &::after {
@@ -45,13 +51,71 @@
           background-image: url('../../../assets/images/common/arrow_blue.png');
           background-size: contain;
           background-repeat: no-repeat;
+          transition: all 0.3s ease;
+        }
+
+        @media screen and (max-width: 1024px) {
+          font-size: 20px;
         }
       }
 
       .desc {
         color: #6A7282;
         font-size: 20px;
-        display: none;
+        height: 0;
+        opacity: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        margin: 0 40px;
+
+        .imgWrap {
+          position: relative;
+          width: 500px;
+          height: auto;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+
+          p {
+            @include overlayText;
+          }
+        }
+
+        @media screen and (max-width: 1024px) {
+          flex-direction: column;
+          margin: 0;
+          font-size: 16px;
+          gap: 20px;
+
+          .imgWrap {
+            width: 90%;
+            max-width: 500px;
+          }
+        }
+
+      }
+
+      &.active {
+        transition: all 0.3s ease;
+
+        .desc {
+          height: auto;
+          opacity: 1;
+          padding: 50px 0 20px 0;
+          transition: all 0.3s ease;
+        }
+
+        .title {
+          &::after {
+            transform: translateY(-50%) rotate(180deg);
+            transition: all 0.3s ease;
+          }
+        }
       }
     }
   }
