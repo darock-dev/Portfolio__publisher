@@ -1,0 +1,91 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.slideSec {
+  @include section;
+  background-color: $bg-gray;
+
+  .inner {
+    @include inner;
+    max-width: auto;
+  }
+
+  .titleWrap {
+    .title {
+      @include sectionTitle;
+
+      span {
+        color: $primary-color;
+      }
+    }
+
+    .subTitle {
+      @include sectionSubTitle;
+    }
+  }
+
+  .content {
+    .slideSwiper {
+      padding-bottom: 70px;
+
+      img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      .title {
+        font-weight: $font-bold;
+        font-size: 36px;
+        margin-bottom: 40px;
+      }
+
+      .desc {
+        font-size: 16px;
+        color: $desc-color;
+        margin-bottom: 20px;
+      }
+
+      :global {
+
+        .swiper-button-prev,
+        .swiper-button-next {
+          position: absolute;
+          top: unset;
+          bottom: 0px;
+          width: 50px;
+          height: 50px;
+          background-color: $text-color;
+          border-radius: 100%;
+          margin-top: 0;
+
+          svg {
+            fill: #fff;
+            width: 16px;
+
+            path {
+              fill: #fff;
+            }
+          }
+        }
+
+        .swiper-button-prev {
+          right: 70px;
+          left: unset;
+
+          svg {
+            margin-right: 4px;
+          }
+        }
+
+        .swiper-button-next {
+          right: 0;
+
+          svg {
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+  }
+}

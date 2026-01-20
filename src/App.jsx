@@ -2,6 +2,7 @@ import MainLayout from "./components/layout/MainLayout/MainLayout";
 import AccordionMenu from "./components/sections/AccordionMenu/AccordionMenu";
 import CssAnimation from "./components/sections/CssAnimation/CssAnimation";
 import MainVisual from "./components/sections/MainVisual/MainVisual";
+import Slide from "./components/sections/Slide/Slide";
 import "./styles/App.scss";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <MainVisual />
         <CssAnimation />
         <AccordionMenu />
+        <Slide />
       </MainLayout>
     </>
   );

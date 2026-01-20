@@ -30,10 +30,10 @@ export default function Header() {
               <a href="#accordion-menu">Accordion Menu</a>
             </li>
             <li>
-              <a href="#form">Form</a>
+              <a href="#slide-sec">Slide</a>
             </li>
             <li>
-              <a href="#slide">Slide</a>
+              <a href="#form">Form</a>
             </li>
             <li>
               <a href="#contact">Contact</a>

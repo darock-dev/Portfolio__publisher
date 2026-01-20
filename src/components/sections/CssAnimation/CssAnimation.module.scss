@@ -190,7 +190,7 @@ $wave-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
       .desc {
         font-size: 24px;
         font-weight: $font-bold;
-        color: #6A7282;
+        color: $desc-color;
         line-height: normal;
         cursor: pointer;
         z-index: 1;
