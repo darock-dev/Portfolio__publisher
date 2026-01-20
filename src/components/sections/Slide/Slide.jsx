@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./Slide.module.scss";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import { Navigation, Keyboard, A11y } from "swiper/modules";
 import slideImg01 from "../../../assets/images/main/slide_img01.png";
 import slideImg02 from "../../../assets/images/main/slide_img02.png";
 import slideImg03 from "../../../assets/images/main/slide_img03.png";
@@ -59,7 +59,7 @@ export default function Slide() {
           <Swiper
             spaceBetween={30}
             navigation={true}
-            modules={[Navigation]}
+            modules={[Navigation, Keyboard, A11y]}
             slidesPerView={1}
             breakpoints={{
               1024: {
@@ -68,6 +68,9 @@ export default function Slide() {
               768: {
                 slidesPerView: 2,
               },
+            }}
+            keyboard={{
+              enabled: true,
             }}
             className={styles.slideSwiper}
           >

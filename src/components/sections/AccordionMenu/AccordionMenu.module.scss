@@ -64,7 +64,7 @@
         font-size: 20px;
         height: 0;
         opacity: 0;
-        display: flex;
+        display: none;
         flex-direction: row;
         align-items: center;
         justify-content: center;
@@ -72,6 +72,7 @@
         margin: 0 40px;
 
         .imgWrap {
+          display: none;
           position: relative;
           width: 500px;
           height: auto;
@@ -106,8 +107,13 @@
         .desc {
           height: auto;
           opacity: 1;
+          display: flex;
           padding: 50px 0 20px 0;
           transition: all 0.3s ease;
+
+          .imgWrap {
+            display: block;
+          }
         }
 
         .title {

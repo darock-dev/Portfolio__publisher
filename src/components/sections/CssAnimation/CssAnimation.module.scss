@@ -84,7 +84,9 @@ $wave-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
         }
 
         &:has(.text:hover),
-        &:has(.desc:hover) {
+        &:has(.text:focus),
+        &:has(.desc:hover),
+        &:has(.desc:focus) {
           &::before {
             animation: ballExpand 0.5s forwards;
           }
@@ -126,7 +128,9 @@ $wave-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
         }
 
         &:has(.text:hover),
-        &:has(.desc:hover) {
+        &:has(.text:focus),
+        &:has(.desc:hover),
+        &:has(.desc:focus) {
           .text {
             &::before {
               animation: waveFlow 2.3s forwards;
@@ -151,7 +155,9 @@ $wave-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
         }
 
         &:has(.text:hover),
-        &:has(.desc:hover) {
+        &:has(.text:focus),
+        &:has(.desc:hover),
+        &:has(.desc:focus) {
           .text {
             animation: textGradation 1s forwards;
           }
@@ -165,7 +171,9 @@ $wave-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
         }
 
         &:has(.text:hover),
-        &:has(.desc:hover) {
+        &:has(.text:focus),
+        &:has(.desc:hover),
+        &:has(.desc:focus) {
           .text {
             animation: textBlurOut 1.5s forwards;
           }
@@ -177,6 +185,7 @@ $wave-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
         font-weight: $font-extrabold;
         cursor: pointer;
         z-index: 1;
+        color: $text-color;
 
         @media screen and (max-width: 1024px) {
           font-size: 150px;
@@ -197,76 +206,76 @@ $wave-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
       }
     }
   }
-}
 
-// 공 애니메이션
-@keyframes ballExpand {
-  0% {
-    width: 210px;
-    opacity: 0;
-    transform: translateY(-50%), scale(0);
+  // 공 애니메이션
+  @keyframes ballExpand {
+    0% {
+      width: 210px;
+      opacity: 0;
+      transform: translateY(-50%), scale(0);
+    }
+
+    30% {
+      width: 210px;
+      opacity: 1;
+      trnasform: trnaslateY(-50%), scale(1);
+    }
+
+    100% {
+      width: 100%;
+      opacity: 1;
+      trnasform: trnaslateY(-50%), scale(1);
+    }
   }
 
-  30% {
-    width: 210px;
-    opacity: 1;
-    trnasform: trnaslateY(-50%), scale(1);
+  @keyframes textWhite {
+    0% {
+      color: $primary-color;
+    }
+
+    90% {
+      color: #fff;
+    }
+
+    100% {
+      color: #fff;
+    }
   }
 
-  100% {
-    width: 100%;
-    opacity: 1;
-    trnasform: trnaslateY(-50%), scale(1);
-  }
-}
+  // 파도 애니메이션
+  @keyframes waveFlow {
+    0% {
+      background-position-y: 0%;
+      background-position-x: 9%;
+    }
 
-@keyframes textWhite {
-  0% {
-    color: $primary-color;
-  }
-
-  90% {
-    color: #fff;
+    100% {
+      background-position-y: 100%;
+      background-position-x: 90%;
+    }
   }
 
-  100% {
-    color: #fff;
-  }
-}
+  // 텍스트 그라데이션 애니메이션
+  @keyframes textGradation {
+    0% {
+      background-position: 0% 50%;
+    }
 
-// 파도 애니메이션
-@keyframes waveFlow {
-  0% {
-    background-position-y: 0%;
-    background-position-x: 9%;
-  }
-
-  100% {
-    background-position-y: 100%;
-    background-position-x: 90%;
-  }
-}
-
-// 텍스트 그라데이션 애니메이션
-@keyframes textGradation {
-  0% {
-    background-position: 0% 50%;
+    100% {
+      background-position: 50% 100%;
+    }
   }
 
-  100% {
-    background-position: 50% 100%;
-  }
-}
+  // 블러 애니메이션
+  @keyframes textBlurOut {
+    from {
+      filter: blur(0);
+      opacity: 1;
+    }
 
-// 블러 애니메이션
-@keyframes textBlurOut {
-  from {
-    filter: blur(0);
-    opacity: 1;
-  }
-
-  to {
-    filter: blur(20px);
-    opacity: 0;
+    to {
+      filter: blur(20px);
+      opacity: 0;
+    }
   }
 }

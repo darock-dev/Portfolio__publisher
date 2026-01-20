@@ -85,6 +85,19 @@
             margin-left: 4px;
           }
         }
+
+        // 스크린 리더에서만 읽히도록 설정
+        .swiper-notification {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
       }
     }
   }

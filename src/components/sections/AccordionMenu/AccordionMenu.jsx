@@ -47,6 +47,14 @@ export default function AccordionMenu() {
     clickMenu.classList.toggle(styles.active);
   };
 
+  // 아코디언 메뉴에 키다운 이벤트 추가 (엔터/스페이스바)
+  const onKeyDownAccordionMenu = (e, callback) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      callback();
+    }
+  };
+
   return (
     <section id="accordion-menu-sec" className={styles.accordionMenuSec}>
       <div className={styles.inner}>
@@ -61,7 +69,13 @@ export default function AccordionMenu() {
         </div>
         <div className={styles.content}>
           {accordionData.map((item) => (
-            <div key={item.id} className={styles.menu} onClick={onClickAccordionMenu}>
+            <div
+              key={item.id}
+              className={styles.menu}
+              onClick={onClickAccordionMenu}
+              tabIndex={0}
+              onKeyDown={(e) => onKeyDownAccordionMenu(e, () => onClickAccordionMenu(e))}
+            >
               <div className={styles.title}>{item.title}</div>
               <div className={styles.desc}>
                 <div className={styles.imgWrap}>
