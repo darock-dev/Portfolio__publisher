@@ -1,5 +1,6 @@
 import MainLayout from "./components/layout/MainLayout/MainLayout";
 import AccordionMenu from "./components/sections/AccordionMenu/AccordionMenu";
+import Contact from "./components/sections/Contact/Contact";
 import CssAnimation from "./components/sections/CssAnimation/CssAnimation";
 import Form from "./components/sections/Form/Form";
 import MainVisual from "./components/sections/MainVisual/MainVisual";
@@ -15,6 +16,7 @@ function App() {
         <AccordionMenu />
         <Slide />
         <Form />
+        <Contact />
       </MainLayout>
     </>
   );

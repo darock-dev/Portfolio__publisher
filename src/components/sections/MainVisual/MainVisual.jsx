@@ -7,7 +7,7 @@ export default function MainVisual() {
   const downloadFile = useDownloadFile();
 
   return (
-    <div className={styles.mainVisual}>
+    <section id="main-visual-sec" className={styles.mainVisual}>
       <div className={styles.imgWrap}>
         <img src={MainVisualImg} alt="" role="presentation" />
       </div>
@@ -25,6 +25,6 @@ export default function MainVisual() {
         </div>
         <p>&lt;AI를 사용하여 제작된 이미지 입니다.&gt;</p>
       </div>
-    </div>
+    </section>
   );
 }
