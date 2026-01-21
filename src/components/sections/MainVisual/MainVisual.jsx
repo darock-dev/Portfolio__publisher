@@ -1,10 +1,12 @@
 import MainVisualImg from "../../../assets/images/main/main-visual.jpg";
 import useDownloadFile from "../../../hooks/useDownloadFile";
+import useScrollAnimation from "../../../hooks/useScrollAnimation";
 import Button from "../../ui/Button";
 import styles from "./MainVisual.module.scss";
 
 export default function MainVisual() {
   const downloadFile = useDownloadFile();
+  useScrollAnimation();
 
   return (
     <section id="main-visual-sec" className={styles.mainVisual}>
@@ -13,14 +15,15 @@ export default function MainVisual() {
       </div>
       <div className={styles.inner}>
         <div className={styles.content}>
-          <div className={styles.subTitle}>Web Publisher</div>
-          <h1 className={styles.title}>
+          <div className={`${styles.subTitle} scroll-animate`}>Web Publisher</div>
+          <h1 className={`${styles.title} scroll-animate`} style={{ transitionDelay: "0.2s" }}>
             <span>Da.Rock</span>'s Portfolio
           </h1>
           <Button
             text="이력서 보기"
             color="blue"
             onClick={() => downloadFile("/files/resume.pdf", "김다희_이력서.pdf")}
+            animateDelay={0.4}
           />
         </div>
         <p>&lt;AI를 사용하여 제작된 이미지 입니다.&gt;</p>

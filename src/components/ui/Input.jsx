@@ -1,3 +1,4 @@
+import useScrollAnimation from "../../hooks/useScrollAnimation";
 import styles from "./Input.module.scss";
 
 export default function Input({
@@ -8,8 +9,10 @@ export default function Input({
   name,
   onChange,
 }) {
+  useScrollAnimation();
+
   return (
-    <div className={styles.inputWrap}>
+    <div className={`${styles.inputWrap} scroll-animate`}>
       <div className={styles.label}>
         {label}
         <span>{isRequired ? "*" : ""}</span>

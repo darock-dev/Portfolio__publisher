@@ -3,12 +3,15 @@ import Button from "../../ui/Button";
 import Input from "../../ui/Input";
 import Textarea from "../../ui/Textarea";
 import styles from "./Form.module.scss";
+import useScrollAnimation from "../../../hooks/useScrollAnimation";
 
 export const ErrorMessage = ({ message }) => {
   return <p className={styles.errorMessage}>{message}</p>;
 };
 
 export default function Form() {
+  useScrollAnimation();
+
   // 폼 state
   const [form, setForm] = useState({
     name: "",
@@ -98,13 +101,13 @@ export default function Form() {
     <section id="form-sec" className={styles.formSec}>
       <div className={styles.inner}>
         <div className={styles.titleWrap}>
-          <h2 className={styles.title}>
+          <h2 className={`${styles.title} scroll-animate`}>
             <div>React와 Javascript로 만든</div>
             <div>
               Section04. <span>Form</span>
             </div>
           </h2>
-          <div className={styles.subTitle}>React와 Javascript로 만든 Form</div>
+          <div className={`${styles.subTitle} scroll-animate`}>React와 Javascript로 만든 Form</div>
         </div>
         <div className={styles.content}>
           <div className={styles.formWrap}>

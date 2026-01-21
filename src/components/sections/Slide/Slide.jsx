@@ -8,6 +8,7 @@ import slideImg02 from "../../../assets/images/main/slide_img02.png";
 import slideImg03 from "../../../assets/images/main/slide_img03.png";
 import slideImg04 from "../../../assets/images/main/slide_img04.png";
 import slideImg05 from "../../../assets/images/main/slide_img05.png";
+import useScrollAnimation from "../../../hooks/useScrollAnimation";
 
 const slideData = [
   {
@@ -43,19 +44,21 @@ const slideData = [
 ];
 
 export default function Slide() {
+  useScrollAnimation();
+
   return (
     <section id="slide-sec" className={styles.slideSec}>
       <div className={styles.inner}>
         <div className={styles.titleWrap}>
-          <h2 className={styles.title}>
+          <h2 className={`${styles.title} scroll-animate`}>
             <div>Swiper 플러그인을 사용한</div>
             <div>
               Section03. <span>Slide</span>
             </div>
           </h2>
-          <div className={styles.subTitle}>Swiper 플러그인을 사용한 Slide</div>
+          <div className={`${styles.subTitle} scroll-animate`}>Swiper 플러그인을 사용한 Slide</div>
         </div>
-        <div className={styles.content}>
+        <div className={`${styles.content} scroll-animate`}>
           <Swiper
             spaceBetween={30}
             navigation={true}

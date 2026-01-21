@@ -1,16 +1,18 @@
 import styles from "./Contact.module.scss";
 import Button from "../../ui/Button";
 import useDownloadFile from "../../../hooks/useDownloadFile";
+import useScrollAnimation from "../../../hooks/useScrollAnimation";
 
 export default function Contact() {
   const downloadFile = useDownloadFile();
+  useScrollAnimation();
 
   return (
     <section id="contact-sec" className={styles.contactSec}>
       <div className={styles.textWrap}>
-        <div>이상으로 포트폴리오를 마칩니다.</div>
-        <div>소중한 시간 내어 봐주셔서 감사합니다.</div>
-        <div>함께하고 싶어지셨다면, 언제든 연락 주세요.</div>
+        <div className="scroll-animate">이상으로 포트폴리오를 마칩니다.</div>
+        <div className="scroll-animate">소중한 시간 내어 봐주셔서 감사합니다.</div>
+        <div className="scroll-animate">함께하고 싶어지셨다면, 언제든 연락 주세요.</div>
       </div>
       <div className={styles.buttonWrap}>
         <Button

@@ -3,8 +3,11 @@ import accImg01 from "../../../assets/images/main/accordion_img01.png";
 import accImg02 from "../../../assets/images/main/accordion_img02.png";
 import accImg03 from "../../../assets/images/main/accordion_img03.png";
 import accImg04 from "../../../assets/images/main/accordion_img04.png";
+import useScrollAnimation from "../../../hooks/useScrollAnimation";
 
 export default function AccordionMenu() {
+  useScrollAnimation();
+
   const accordionData = [
     {
       id: 1,
@@ -59,15 +62,17 @@ export default function AccordionMenu() {
     <section id="accordion-menu-sec" className={styles.accordionMenuSec}>
       <div className={styles.inner}>
         <div className={styles.titleWrap}>
-          <h2 className={styles.title}>
+          <h2 className={`${styles.title} scroll-animate`}>
             <div>순수 Javascript로 만들어 낸</div>
             <div>
               Section02. <span>Accordion Menu</span>
             </div>
           </h2>
-          <div className={styles.subTitle}>순수 자바스크립트로 코드로 만든 Accordion Menu</div>
+          <div className={`${styles.subTitle} scroll-animate`}>
+            순수 자바스크립트로 코드로 만든 Accordion Menu
+          </div>
         </div>
-        <div className={styles.content}>
+        <div className={`${styles.content} scroll-animate`}>
           {accordionData.map((item) => (
             <div
               key={item.id}
