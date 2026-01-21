@@ -1,7 +1,7 @@
 import MainVisualImg from "../../../assets/images/main/main-visual.jpg";
 import useOpenFile from "../../../hooks/useOpenFile";
 import useScrollAnimation from "../../../hooks/useScrollAnimation";
-import Button from "../../ui/Button";
+import Button from "../../ui/Button/Button";
 import styles from "./MainVisual.module.scss";
 
 export default function MainVisual() {

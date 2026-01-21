@@ -1,5 +1,5 @@
 import styles from "./Contact.module.scss";
-import Button from "../../ui/Button";
+import Button from "../../ui/Button/Button";
 import useOpenFile from "../../../hooks/useOpenFile";
 import useScrollAnimation from "../../../hooks/useScrollAnimation";
 

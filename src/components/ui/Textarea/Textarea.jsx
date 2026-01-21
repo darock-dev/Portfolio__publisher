@@ -1,4 +1,4 @@
-import useScrollAnimation from "../../hooks/useScrollAnimation";
+import useScrollAnimation from "../../../hooks/useScrollAnimation";
 import styles from "./Textarea.module.scss";
 
 export default function Textarea({ label, placeholder, isRequired = false, name, onChange }) {

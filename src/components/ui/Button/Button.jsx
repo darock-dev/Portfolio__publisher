@@ -1,4 +1,4 @@
-import useScrollAnimation from "../../hooks/useScrollAnimation";
+import useScrollAnimation from "../../../hooks/useScrollAnimation";
 import styles from "./Button.module.scss";
 
 export default function Button({ text, color = "blue", onClick, animateDelay = 0 }) {

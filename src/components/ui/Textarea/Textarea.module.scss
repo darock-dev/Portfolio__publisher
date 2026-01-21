@@ -1,7 +1,7 @@
-@use '../../styles/variables' as *;
-@use '../../styles/mixins' as *;
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
 
-.inputWrap {
+.textareaWrap {
   display: flex;
   flex-direction: column;
 
@@ -20,15 +20,18 @@
     }
   }
 
-  input {
+  textarea {
     border: 1px solid $border-color;
     border-radius: 8px;
     padding: 20px 16px;
     font-size: 16px;
+    height: 300px;
+    font-family: $font-main;
 
     @media screen and (max-width: 768px) {
       padding: 16px 12px;
       font-size: 14px;
+      height: 200px;
     }
 
     &::placeholder {

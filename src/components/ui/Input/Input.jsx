@@ -1,4 +1,4 @@
-import useScrollAnimation from "../../hooks/useScrollAnimation";
+import useScrollAnimation from "../../../hooks/useScrollAnimation";
 import styles from "./Input.module.scss";
 
 export default function Input({

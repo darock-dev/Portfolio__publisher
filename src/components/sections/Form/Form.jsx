@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Button from "../../ui/Button";
-import Input from "../../ui/Input";
-import Textarea from "../../ui/Textarea";
+import Button from "../../ui/Button/Button";
+import Input from "../../ui/Input/Input";
+import Textarea from "../../ui/Textarea/Textarea";
 import styles from "./Form.module.scss";
 import useScrollAnimation from "../../../hooks/useScrollAnimation";
 
