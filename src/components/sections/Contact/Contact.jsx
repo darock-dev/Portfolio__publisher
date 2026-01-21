@@ -4,6 +4,7 @@ import useOpenFile from "../../../hooks/useOpenFile";
 import useScrollAnimation from "../../../hooks/useScrollAnimation";
 
 export default function Contact() {
+  const baseUrl = import.meta.env.BASE_URL;
   const openFile = useOpenFile();
   useScrollAnimation();
 
@@ -15,7 +16,11 @@ export default function Contact() {
         <div className="scroll-animate">함께하고 싶어지셨다면, 언제든 연락 주세요.</div>
       </div>
       <div className={styles.buttonWrap}>
-        <Button text="이력서 보기" color="white" onClick={() => openFile("/files/resume.pdf")} />
+        <Button
+          text="이력서 보기"
+          color="white"
+          onClick={() => openFile(`${baseUrl}files/resume.pdf`)}
+        />
       </div>
     </section>
   );

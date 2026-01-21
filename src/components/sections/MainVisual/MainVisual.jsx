@@ -5,6 +5,7 @@ import Button from "../../ui/Button/Button";
 import styles from "./MainVisual.module.scss";
 
 export default function MainVisual() {
+  const baseUrl = import.meta.env.BASE_URL;
   const openFile = useOpenFile();
   useScrollAnimation();
 
@@ -22,7 +23,7 @@ export default function MainVisual() {
           <Button
             text="이력서 보기"
             color="blue"
-            onClick={() => openFile("/files/resume.pdf")}
+            onClick={() => openFile(`${baseUrl}files/resume.pdf`)}
             animateDelay={0.4}
           />
         </div>
