@@ -1,11 +1,11 @@
 import MainVisualImg from "../../../assets/images/main/main-visual.jpg";
-import useDownloadFile from "../../../hooks/useDownloadFile";
+import useOpenFile from "../../../hooks/useOpenFile";
 import useScrollAnimation from "../../../hooks/useScrollAnimation";
 import Button from "../../ui/Button";
 import styles from "./MainVisual.module.scss";
 
 export default function MainVisual() {
-  const downloadFile = useDownloadFile();
+  const openFile = useOpenFile();
   useScrollAnimation();
 
   return (
@@ -22,7 +22,7 @@ export default function MainVisual() {
           <Button
             text="이력서 보기"
             color="blue"
-            onClick={() => downloadFile("/files/resume.pdf", "김다희_이력서.pdf")}
+            onClick={() => openFile("/files/resume.pdf")}
             animateDelay={0.4}
           />
         </div>

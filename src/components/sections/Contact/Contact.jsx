@@ -1,10 +1,10 @@
 import styles from "./Contact.module.scss";
 import Button from "../../ui/Button";
-import useDownloadFile from "../../../hooks/useDownloadFile";
+import useOpenFile from "../../../hooks/useOpenFile";
 import useScrollAnimation from "../../../hooks/useScrollAnimation";
 
 export default function Contact() {
-  const downloadFile = useDownloadFile();
+  const openFile = useOpenFile();
   useScrollAnimation();
 
   return (
@@ -15,11 +15,7 @@ export default function Contact() {
         <div className="scroll-animate">함께하고 싶어지셨다면, 언제든 연락 주세요.</div>
       </div>
       <div className={styles.buttonWrap}>
-        <Button
-          text="이력서 보기"
-          color="white"
-          onClick={() => downloadFile("/files/resume.pdf", "김다희_이력서.pdf")}
-        />
+        <Button text="이력서 보기" color="white" onClick={() => openFile("/files/resume.pdf")} />
       </div>
     </section>
   );
