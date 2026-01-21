@@ -218,13 +218,13 @@ $wave-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
     30% {
       width: 210px;
       opacity: 1;
-      trnasform: trnaslateY(-50%), scale(1);
+      transform: trnaslateY(-50%), scale(1);
     }
 
     100% {
       width: 100%;
       opacity: 1;
-      trnasform: trnaslateY(-50%), scale(1);
+      transform: trnaslateY(-50%), scale(1);
     }
   }
 
