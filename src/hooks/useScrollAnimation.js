@@ -11,15 +11,16 @@ export default function useScrollAnimation() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          // 20% 이상 보이면 on 클래스 추가
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
             // isIntersecting: 감시 대상이 화면에 보이는지 여부
             entry.target.classList.add("on"); // 화면에 보이면 on 클래스 추가
-          } else {
+          } else if (!entry.isIntersecting) {
             entry.target.classList.remove("on"); // 화면에 보이지 않으면 on 클래스 제거
           }
         });
       },
-      { threshold: 0.2 } // 20% 보이면 실행
+      { threshold: [0, 0.2] } // 감시구간: 0% ~ 20%
     );
 
     // 감시 시작
