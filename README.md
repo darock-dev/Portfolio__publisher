@@ -1,16 +1,29 @@
-# React + Vite
+## [Da.Rock 의 포트폴리오 사이트 🔗](https://darock-dev.github.io/Portfolio__publisher/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **[소개]**
+기획부터 디자인, 개발까지 **100% 1인 기여**한 반응형 포트폴리오 사이트
 
-Currently, two official plugins are available:
+- **[사용기술]**
+ `HTML`, `CSS/SCSS`, `JS`, `React`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **[퍼블리싱 소요 기간]**
+    - 집중 개발: 2026.01.18~2026.01.21 (4일간 핵심 기능 구현 완료)
+    - 현재: 지속적인 리팩토링 및 기능 고도화 진행
+    
+- **[구현한 기능]**
+    
+    1.  첫화면 팝업 → LocalStorage 를 활용해 일별로 팝업을 안 볼 수 있도록 적용 (PC에서만 표시)
+    
+    2.  CSS를 활용한 애니메이션 → 다양한 CSS 애니메이션을 통해 다이나믹한 효과 적용 
+    
+    3.  아코디언 메뉴 → 순수 JS를 사용해 아코디언 메뉴 개발
+    
+    4.  Swiper 플러그인 슬라이드 → 플러그인 적용 및 커스텀
+    
+    5.  입력폼 → JS와 React를 통해 간단한 폼 검증(빈 값 확인) 후 입력폼을 제출 할 수 있도록 개발
+    
+    6.  반응형 사이트 → 반응형 HTML 설계 및 CSS 적용
+    
+    7.  SCSS를 사용하여 네이밍에 대한 고민을 덜고 변수를 활용하여 스타일링 시간 단축 
+    
+    8.  이미지 요소를 생성형 AI로 제작하여 작업 시간 단축
