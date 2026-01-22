@@ -52,7 +52,7 @@ $wave-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
         text-align: center;
         margin-bottom: 20px;
         width: 100%;
-        gap: 10px;
+        gap: 0px;
         padding: 10px;
 
         &:nth-child(1),
@@ -69,7 +69,6 @@ $wave-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
           top: 50%;
           right: 0;
           transform: translateY(-50%);
-
           width: 210px;
           height: 210px;
           background-color: $primary-color;
@@ -80,6 +79,11 @@ $wave-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
           @media screen and (max-width: 768px) {
             left: 0;
             right: auto;
+            height: 250px;
+          }
+
+          @media screen and (max-width: 375px) {
+            border-radius: 80px;
           }
         }
 
@@ -192,7 +196,7 @@ $wave-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
         }
 
         @media screen and (max-width: 768px) {
-          font-size: 120px;
+          font-size: 100px;
         }
       }
 
@@ -203,6 +207,13 @@ $wave-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
         line-height: normal;
         cursor: pointer;
         z-index: 1;
+
+
+        @media screen and (max-width: 768px) {
+          font-size: 20px;
+        }
+
+
       }
     }
   }
