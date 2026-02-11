@@ -1,0 +1,324 @@
+@import "tailwindcss";
+
+@theme {
+  --font-pretendard: "Pretendard Variable", "Pretendard", "sans-serif";
+  --breakpoint-xs: 23.4375rem;
+  --breakpoint-3xl: 120rem;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-pretendard);
+  }
+}
+
+@layer components {
+  .inner {
+    @apply w-full mx-auto max-w-7xl px-5 py-0;
+  }
+  .nav {
+    @apply absolute top-15 left-0 right-0 h-0 bg-white overflow-hidden;
+    @apply lg:static lg:h-auto;
+
+    &.active {
+      @apply transition-all h-auto duration-600 ease-in-out shadow-sm;
+      @apply lg:shadow-none;
+    }
+  }
+
+  .section {
+    @apply px-0 py-25;
+    @apply md:py-40;
+  }
+  .section-title {
+    @apply font-bold  text-[32px]  leading-11  mb-6;
+    @apply md:text-5xl md:leading-17 md:mb-9;
+  }
+  .section-subtitle {
+    @apply font-medium text-xl text-gray-500 leading-8 mb-15;
+    @apply md:mb-20;
+  }
+
+  .overlay-text {
+    @apply absolute bottom-2.5 left-2.5 text-sm text-black/40 z-10;
+  }
+
+  .btn-base {
+    @apply font-semibold text-base px-9 py-3 rounded-[100px] border cursor-pointer;
+    @apply transition-all duration-300 ease-in-out;
+    @apply lg:px-12 lg:py-4;
+  }
+
+  .btn-blue {
+    @apply bg-blue-500 text-white border-blue-500;
+    &:hover {
+      @apply bg-blue-600 border-blue-600;
+    }
+  }
+
+  .btn-white {
+    @apply bg-white text-blue-500 border-blue-500;
+    &:hover {
+      @apply bg-blue-500 text-white;
+    }
+  }
+
+  .menu-toggle {
+    @apply flex absolute top-5.25 right-5 w-5 h-4.5 flex-col justify-between;
+    @apply lg:hidden;
+
+    & span {
+      @apply inline-block w-full h-0.5 bg-gray-800 transition-all duration-300;
+    }
+
+    &.active {
+      & span:nth-child(1) {
+        @apply rotate-45 -translate-x-px translate-y-1.75;
+      }
+      & span:nth-child(2) {
+        @apply opacity-0;
+      }
+      & span:nth-child(3) {
+        @apply -rotate-45 -translate-x-px -translate-y-2.25;
+      }
+    }
+  }
+  
+  .animation-item {
+    @apply relative w-full gap-0 p-2.5 mb-5;
+    @apply flex flex-col items-center text-center;
+    @apply md:mb-0 md:w-1/2 md:px-7 md:py-2.5 md:flex-row md:gap-5 lg:gap-9;
+
+    &.ball-item {
+      &::before {
+        content: '';
+        @apply absolute top-1/2 left-0 right-auto -translate-y-1/2 w-52.5 h-62.5 bg-blue-500  rounded-[80px] xs:rounded-[210px] z-0 opacity-0;
+        @apply md:left-auto md:right-0 md:h-52.5
+      }
+      &:has(.animation-item-text:hover),
+      &:has(.animation-item-text:focus),
+      &:has(.animation-item-desc:hover),
+      &:has(.animation-item-desc:focus) {
+        &::before {
+          @apply animate-[ballExpand_0.5s_forwards];
+        }
+        .animation-item-text,
+        .animation-item-desc {
+          @apply animate-[textWhite_0.5s_forwards];
+        }
+      }
+    }
+
+    &.wave-item {
+      --wave-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23007bff' fill-opacity='1' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+      --ease-wave: cubic-bezier(0.4, 0, 0.2, 1);
+      & .animation-item-text {
+        @apply relative;
+        &::before {
+          content: attr(data-text);
+          background-image: var(--wave-svg);
+          transition-timing-function: var(--ease-wave);
+          @apply absolute top-0 left-0 w-full h-full;
+          @apply bg-no-repeat bg-size-[2000%] bg-clip-text text-transparent bg-position-[48%_0%];
+          @apply transition-[background-position] duration-2000;
+        }
+      }
+      &:has(.animation-item-text:hover),
+      &:has(.animation-item-text:focus),
+      &:has(.animation-item-desc:hover),
+      &:has(.animation-item-desc:focus) {
+        & .animation-item-text {
+          &::before {
+            @apply animate-[waveFlow_2.3s_forwards];
+          }
+        }
+      }
+    }
+
+    &.gradation-item {
+      & .animation-item-text {
+        background: linear-gradient(135deg,#1E2939,#1E2939,#1E2939,#2356ff,#8223ff,#f518e3);
+        @apply bg-size-[300%_300%] bg-clip-text text-transparent;
+      }
+      &:has(.animation-item-text:hover),
+      &:has(.animation-item-text:focus),
+      &:has(.animation-item-desc:hover),
+      &:has(.animation-item-desc:focus) {
+        .animation-item-text {
+          @apply animate-[textGradation_1s_forwards];
+        }
+      }      
+    }
+
+    &.blur-item {
+      & .animation-item-text {
+        @apply filter-[blur(0)] opacity-100;
+      }
+      &:has(.animation-item-text:hover),
+      &:has(.animation-item-text:focus),
+      &:has(.animation-item-desc:hover),
+      &:has(.animation-item-desc:focus) {
+        .animation-item-text {
+          @apply animate-[textBlurOut_1.5s_forwards];
+        }
+      }
+    }
+  }
+
+  .animation-item-text {
+    @apply text-[100px] font-extrabold text-gray-800 cursor-pointer z-1;
+    @apply md:text-[150px] lg:text-[200px];
+  }
+
+  .animation-item-desc {
+    @apply text-xl font-bold text-gray-500 leading-normal cursor-pointer z-1;
+    @apply md:text-2xl;
+  }
+
+  .accordion-menu {
+    @apply px-2.5 py-6  border-b border-gray-300 cursor-pointer;
+    @apply md:px-5 md:py-8;
+
+    &.active {
+      @apply transition-all duration-300 ease-in-out;
+
+      & .accordion-title {
+        &::after {
+          @apply -translate-y-1/2 rotate-180;
+          @apply transition-all duration-300 ease-in-out;
+        }
+      }
+
+      & .accordion-desc {
+        @apply h-auto opacity-100 flex pt-12.5 pr-0 pb-4 pl-0;
+        @apply transition-all duration-300 ease-in-out;
+
+        & .imgWrap {
+          @apply block;
+        }
+      }
+    }
+  }
+
+  .accordion-title {
+    @apply relative pr-7.5  text-xl font-bold;
+    @apply md:text-[28px];
+
+    &::after {
+      content: '';
+      @apply absolute top-1/2 right-0 -translate-y-1/2 w-6.5 h-4;
+      @apply bg-no-repeat bg-contain;
+      @apply transition-transform duration-300 ease-in-out;
+      background-image: url('./assets/images/common/arrow_blue.png');
+    }
+  }
+
+  .accordion-desc {
+    @apply text-gray-500 text-base h-0 opacity-0 hidden flex-col  items-center justify-center  gap-5 m-0;
+    @apply lg:text-xl lg:flex-row lg:gap-15 lg:mx-10 lg:my-0;
+  }
+
+  .slideSwiper {
+    & .swiper-button-prev,
+    & .swiper-button-next {
+      @apply absolute top-[unset]! bottom-0! w-12.5 h-12.5 bg-gray-800 rounded-full mt-0!;
+      & svg {
+        @apply fill-white w-4!;
+        & path {
+          @apply fill-white;
+        }
+      }
+    }
+    & .swiper-button-prev {
+      @apply right-17.5! left-[unset]!;
+      & svg {
+        @apply mr-1;
+      }
+    }
+    & .swiper-button-next {
+      @apply right-0!;
+
+      & svg {
+        @apply ml-1;
+      }
+    }
+    /* 스크린 리더에서만 읽히도록 설정 */
+    & .swiper-notification {
+      @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+    }
+  }
+}
+
+@layer utilities {
+  .scroll-animate {
+    @apply opacity-0 -translate-y-10 transition-all duration-700 ease-out;
+  }
+  .scroll-animate.on {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+/* 공 애니메이션 */
+@keyframes ballExpand {
+  0% {
+    width: 210px;
+    opacity: 0;
+    transform: translateY(-50%), scale(0);
+  }
+  30% {
+    width: 210px;
+    opacity: 1;
+    transform: trnaslateY(-50%), scale(1);
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+    transform: trnaslateY(-50%), scale(1);
+  }
+}
+
+@keyframes textWhite {
+  0% {
+    color: #2B7FFF;
+  }
+  90% {
+    color: #fff;
+  }
+  100% {
+    color: #fff;
+  }
+}
+
+/* 파도 애니메이션 */
+@keyframes waveFlow {
+  0% {
+    background-position-y: 0%;
+    background-position-x: 9%;
+  }
+  100% {
+    background-position-y: 100%;
+    background-position-x: 90%;
+  }
+}
+
+/* 텍스트 그라데이션 애니메이션 */
+@keyframes textGradation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
+/* 블러 애니메이션 */
+@keyframes textBlurOut {
+  from {
+    filter: blur(0);
+    opacity: 1;
+  }
+  to {
+    filter: blur(20px);
+    opacity: 0;
+  }
+}

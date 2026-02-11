@@ -1,4 +1,3 @@
-import styles from "./AccordionMenu.module.scss";
 import accImg01 from "../../../assets/images/main/accordion_img01.png";
 import accImg02 from "../../../assets/images/main/accordion_img02.png";
 import accImg03 from "../../../assets/images/main/accordion_img03.png";
@@ -38,16 +37,16 @@ export default function AccordionMenu() {
   // 아코디언 메뉴 클릭 이벤트
   const onClickAccordionMenu = (e) => {
     const clickMenu = e.currentTarget;
-    const allMenu = document.querySelectorAll(`#accordion-menu-sec .${styles.menu}`);
+    const allMenu = document.querySelectorAll(`#accordion-menu-sec .accordion-menu`);
 
     // 모든 메뉴를 순회하면서 클릭된 메뉴가 아니면 닫기
     allMenu.forEach((item) => {
       if (item !== clickMenu) {
-        item.classList.remove(styles.active);
+        item.classList.remove('active');
       }
     });
 
-    clickMenu.classList.toggle(styles.active);
+    clickMenu.classList.toggle('active');
   };
 
   // 아코디언 메뉴에 키다운 이벤트 추가 (엔터/스페이스바)
@@ -59,33 +58,33 @@ export default function AccordionMenu() {
   };
 
   return (
-    <section id="accordion-menu-sec" className={styles.accordionMenuSec}>
-      <div className={styles.inner}>
-        <div className={styles.titleWrap}>
-          <h2 className={`${styles.title} scroll-animate`}>
+    <section id="accordion-menu-sec" className="section bg-white">
+      <div className="inner">
+        <div>
+          <h2 className="section-title scroll-animate">
             <div>순수 Javascript로 만들어 낸</div>
             <div>
-              Section02. <span>Accordion Menu</span>
+              Section02. <span className="text-blue-500">Accordion Menu</span>
             </div>
           </h2>
-          <div className={`${styles.subTitle} scroll-animate`}>
+          <div className="section-subtitle scroll-animate">
             순수 자바스크립트로 코드로 만든 Accordion Menu
           </div>
         </div>
-        <div className={`${styles.content} scroll-animate`}>
+        <div className="scroll-animate">
           {accordionData.map((item) => (
             <div
               key={item.id}
-              className={styles.menu}
+              className="accordion-menu"
               onClick={onClickAccordionMenu}
               tabIndex={0}
               onKeyDown={(e) => onKeyDownAccordionMenu(e, () => onClickAccordionMenu(e))}
             >
-              <div className={styles.title}>{item.title}</div>
-              <div className={styles.desc}>
-                <div className={styles.imgWrap}>
-                  <img src={item.imgSrc} />
-                  <p>&lt;AI를 사용하여 제작된 이미지 입니다.&gt;</p>
+              <div className="accordion-title">{item.title}</div>
+              <div className="accordion-desc">
+                <div className="relative w-9/10 max-w-125 lg:max-w-unset lg:w-125 h-auto">
+                  <img className="w-full h-auto" src={item.imgSrc} />
+                  <p className="overlay-text">&lt;AI를 사용하여 제작된 이미지 입니다.&gt;</p>
                 </div>
                 <div>{item.desc}</div>
               </div>

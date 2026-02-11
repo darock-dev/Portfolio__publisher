@@ -1,5 +1,4 @@
 import useScrollAnimation from "../../../hooks/useScrollAnimation";
-import styles from "./Input.module.scss";
 
 export default function Input({
   label,
@@ -12,12 +11,17 @@ export default function Input({
   useScrollAnimation();
 
   return (
-    <div className={`${styles.inputWrap} scroll-animate`}>
-      <div className={styles.label}>
+    <div className="flex flex-col scroll-animate">
+      <div className="font-bold text-base md:text-xl mb-3">
         {label}
-        <span>{isRequired ? "*" : ""}</span>
+        <span className="text-blue-500 ml-1">{isRequired ? "*" : ""}</span>
       </div>
-      <input type={type} placeholder={placeholder} name={name} onChange={onChange} />
+      <input 
+        className="border border-gray-200 rounded-lg px-3 py-4 md:px-4 md:py-5 text-sm md:text-base placeholder:text-gray-400"
+        type={type}
+        placeholder={placeholder} 
+        name={name} 
+        onChange={onChange} />
     </div>
   );
 }

@@ -2,11 +2,10 @@ import { useState } from "react";
 import Button from "../../ui/Button/Button";
 import Input from "../../ui/Input/Input";
 import Textarea from "../../ui/Textarea/Textarea";
-import styles from "./Form.module.scss";
 import useScrollAnimation from "../../../hooks/useScrollAnimation";
 
 export const ErrorMessage = ({ message }) => {
-  return <p className={styles.errorMessage}>{message}</p>;
+  return <p className="text-sm text-red-500 mb-3">{message}</p>;
 };
 
 export default function Form() {
@@ -98,19 +97,19 @@ export default function Form() {
   };
 
   return (
-    <section id="form-sec" className={styles.formSec}>
-      <div className={styles.inner}>
-        <div className={styles.titleWrap}>
-          <h2 className={`${styles.title} scroll-animate`}>
+    <section id="form-sec" className="section bg-white">
+      <div className="inner max-w-auto">
+        <div>
+          <h2 className="section-title scroll-animate">
             <div>React와 Javascript로 만든</div>
             <div>
-              Section04. <span>Form</span>
+              Section04. <span className="text-blue-500">Form</span>
             </div>
           </h2>
-          <div className={`${styles.subTitle} scroll-animate`}>React와 Javascript로 만든 Form</div>
+          <div className="section-subtitle scroll-animate">React와 Javascript로 만든 Form</div>
         </div>
-        <div className={styles.content}>
-          <div className={styles.formWrap}>
+        <div>
+          <div className="flex flex-col gap-5">
             <Input
               label="Name form"
               type="text"
@@ -141,7 +140,7 @@ export default function Form() {
             />
             {askError && <ErrorMessage message={"* 문의사항을 입력해주세요."} />}
           </div>
-          <div className={styles.formButtonWrap}>
+          <div className="flex justify-center mt-10">
             <Button text="제출하기" onClick={submitForm} />
           </div>
         </div>

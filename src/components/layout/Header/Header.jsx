@@ -1,6 +1,5 @@
 import { useState } from "react";
 import logo from "../../../assets/images/common/logo.png";
-import styles from "./Header.module.scss";
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
@@ -11,37 +10,37 @@ export default function Header() {
   };
 
   return (
-    <header className={styles.header}>
-      <div className={styles.inner}>
-        <div className={styles.logo}>
-          <a href="#">
-            <img src={logo} alt="로고" />
+    <header className="w-full fixed top-0 left-0 right-0 bg-white z-999 shadow-sm">
+      <div className="inner p-5 flex items-center justify-between">
+        <div>
+          <a className="flex items-center" href="#">
+            <img className="w-27.25 h-auto" src={logo} alt="로고" />
           </a>
         </div>
         <nav
-          className={`${styles.nav} ${isActive ? styles.active : ""}`}
+          className={`nav ${isActive ? 'active' : ''}`}
           onClick={onClickMenuToggle}
         >
-          <ul>
-            <li>
-              <a href="#css-animation-sec">CSS Animation</a>
+          <ul className="flex items-center gap-0 lg:gap-20 flex-col lg:flex-row bg-white lg:bg-transparent">
+            <li className="p-6 lg:p-0 text-center w-full lg:w-auto">
+              <a className="font-medium hover:text-blue-500" href="#css-animation-sec">CSS Animation</a>
             </li>
-            <li>
-              <a href="#accordion-menu-sec">Accordion Menu</a>
+            <li className="p-6 lg:p-0 text-center w-full lg:w-auto">
+              <a className="font-medium hover:text-blue-500" href="#accordion-menu-sec">Accordion Menu</a>
             </li>
-            <li>
-              <a href="#slide-sec">Slide</a>
+            <li className="p-6 lg:p-0 text-center w-full lg:w-auto">
+              <a className="font-medium hover:text-blue-500" href="#slide-sec">Slide</a>
             </li>
-            <li>
-              <a href="#form-sec">Form</a>
+            <li className="p-6 lg:p-0 text-center w-full lg:w-auto">
+              <a className="font-medium hover:text-blue-500" href="#form-sec">Form</a>
             </li>
-            <li>
-              <a href="#contact-sec">Contact</a>
+            <li className="p-6 lg:p-0 text-center w-full lg:w-auto">
+              <a className="font-medium hover:text-blue-500" href="#contact-sec">Contact</a>
             </li>
           </ul>
         </nav>
         <button
-          className={`${styles.menuToggle} ${isActive ? styles.active : ""}`}
+          className={`menu-toggle ${isActive ? 'active' : ''}`}
           type="button"
           onClick={onClickMenuToggle}
         >
