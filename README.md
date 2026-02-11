@@ -4,7 +4,7 @@
 기획부터 디자인, 개발까지 **100% 1인 기여**한 반응형 포트폴리오 사이트
 
 - **[사용기술]**
- `HTML`, `CSS/SCSS`, `JS`, `React`
+ `HTML`, `TailwindCSS`, `JS`, `React`
 
 - **[코드 확인 GitHub 주소]**
   - https://github.com/darock-dev/Portfolio__publisher
