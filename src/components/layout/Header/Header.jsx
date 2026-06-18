@@ -43,6 +43,7 @@ export default function Header() {
           className={`menu-toggle ${isActive ? 'active' : ''}`}
           type="button"
           onClick={onClickMenuToggle}
+          aria-label="메뉴"
         >
           <span></span>
           <span></span>

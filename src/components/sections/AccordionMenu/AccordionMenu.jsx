@@ -13,24 +13,28 @@ export default function AccordionMenu() {
       title: "Accordion 영역 01 입니다.",
       desc: "01: JS 하드코딩을 통해 만든 아코디언 영역입니다. 다른 아코디언 메뉴 클릭시 현재 열려있던 탭은 닫히며, 클릭된 탭이 열리는 방식입니다.",
       imgSrc: accImg01,
+      imgAlt: "Accordion img 01"
     },
     {
       id: 2,
       title: "Accordion 영역 02 입니다.",
       desc: "02: JS 하드코딩을 통해 만든 아코디언 영역입니다. 다른 아코디언 메뉴 클릭시 현재 열려있던 탭은 닫히며, 클릭된 탭이 열리는 방식입니다.",
       imgSrc: accImg02,
+      imgAlt: "Accordion img 02"
     },
     {
       id: 3,
       title: "Accordion 영역 03 입니다.",
       desc: "03: JS 하드코딩을 통해 만든 아코디언 영역입니다. 다른 아코디언 메뉴 클릭시 현재 열려있던 탭은 닫히며, 클릭된 탭이 열리는 방식입니다.",
       imgSrc: accImg03,
+      imgAlt: "Accordion img 03"
     },
     {
       id: 4,
       title: "Accordion 영역 04 입니다.",
       desc: "04: JS 하드코딩을 통해 만든 아코디언 영역입니다. 다른 아코디언 메뉴 클릭시 현재 열려있던 탭은 닫히며, 클릭된 탭이 열리는 방식입니다.",
       imgSrc: accImg04,
+      imgAlt: "Accordion img 04"
     },
   ];
 
@@ -83,7 +87,7 @@ export default function AccordionMenu() {
               <div className="accordion-title">{item.title}</div>
               <div className="accordion-desc">
                 <div className="relative w-9/10 max-w-125 lg:max-w-unset lg:w-125 h-auto">
-                  <img className="w-full h-auto" src={item.imgSrc} />
+                  <img className="w-full h-auto" src={item.imgSrc} alt={item.imgAlt} />
                   <p className="overlay-text">&lt;AI를 사용하여 제작된 이미지 입니다.&gt;</p>
                 </div>
                 <div>{item.desc}</div>

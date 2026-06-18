@@ -15,30 +15,35 @@ const slideData = [
     title: "Swiper Slide 입니다.",
     desc: "Swiper 플러그인을 사용한 Slide 입니다. 하단의 버튼을 통해 슬라이드 이동이 가능합니다.",
     imgSrc: slideImg01,
+    imgAlt: "Slide img 01"
   },
   {
     id: 2,
     title: "Swiper Slide 입니다.",
     desc: "Swiper 플러그인을 사용한 Slide 입니다. 하단의 버튼을 통해 슬라이드 이동이 가능합니다.",
     imgSrc: slideImg02,
+    imgAlt: "Slide img 02"
   },
   {
     id: 3,
     title: "Swiper Slide 입니다.",
     desc: "Swiper 플러그인을 사용한 Slide 입니다. 하단의 버튼을 통해 슬라이드 이동이 가능합니다.",
     imgSrc: slideImg03,
+    imgAlt: "Slide img 03"
   },
   {
     id: 4,
     title: "Swiper Slide 입니다.",
     desc: "Swiper 플러그인을 사용한 Slide 입니다. 하단의 버튼을 통해 슬라이드 이동이 가능합니다.",
     imgSrc: slideImg04,
+    imgAlt: "Slide img 04"
   },
   {
     id: 5,
     title: "Swiper Slide 입니다.",
     desc: "Swiper 플러그인을 사용한 Slide 입니다. 하단의 버튼을 통해 슬라이드 이동이 가능합니다.",
     imgSrc: slideImg05,
+    imgAlt: "Slide img 05"
   },
 ];
 
@@ -78,7 +83,7 @@ export default function Slide() {
           >
             {slideData.map((item) => (
               <SwiperSlide key={item.id}>
-                <img className="w-full h-auto mb-5" src={item.imgSrc} />
+                <img className="w-full h-auto mb-5" src={item.imgSrc} alt={item.imgAlt}/>
                 <div className="font-bold text-4xl mb-10">{item.title}</div>
                 <p className="text-base mb-5 text-gray-500">{item.desc}</p>
               </SwiperSlide>
