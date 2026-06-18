@@ -4,7 +4,7 @@ export default function Textarea({ label, placeholder, isRequired = false, name,
   useScrollAnimation();
 
   return (
-    <div className="flex flex-col scroll-animate">
+    <label className="flex flex-col scroll-animate">
       <div className="font-bold text-base md:text-xl mb-3">
         {label}
         <span className="text-blue-500 ml-1">{isRequired ? "*" : ""}</span>
@@ -17,6 +17,6 @@ export default function Textarea({ label, placeholder, isRequired = false, name,
         minLength={1}
         maxLength={500}
       />
-    </div>
+    </label>
   );
 }
