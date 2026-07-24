@@ -1,0 +1,33 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.contactSec {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: #101828;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .textWrap {
+    text-align: center;
+    font-size: 64px;
+    font-weight: $font-medium;
+    color: #fff;
+    margin-bottom: 100px;
+    line-height: 86px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 36px;
+      line-height: 46px;
+      margin-bottom: 50px;
+
+    }
+  }
+
+  .buttonWrap {
+    display: flex;
+    gap: 20px;
+  }
+}

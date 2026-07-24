@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import styles from "./Slide.module.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Keyboard, A11y } from "swiper/modules";
@@ -51,18 +52,18 @@ export default function Slide() {
   useScrollAnimation();
 
   return (
-    <section id="slide-sec" className="section bg-gray-50">
-      <div className="inner max-w-auto">
-        <div className="">
-          <h2 className="section-title scroll-animate">
+    <section id="slide-sec" className={styles.slideSec}>
+      <div className={styles.inner}>
+        <div className={styles.titleWrap}>
+          <h2 className={`${styles.title} scroll-animate`}>
             <div>Swiper 플러그인을 사용한</div>
             <div>
-              Section03. <span className="text-blue-500">Slide</span>
+              Section03. <span>Slide</span>
             </div>
           </h2>
-          <div className="section-subtitle scroll-animate">Swiper 플러그인을 사용한 Slide</div>
+          <div className={`${styles.subTitle} scroll-animate`}>Swiper 플러그인을 사용한 Slide</div>
         </div>
-        <div className="scroll-animate">
+        <div className={`${styles.content} scroll-animate`}>
           <Swiper
             spaceBetween={30}
             navigation={true}
@@ -79,13 +80,13 @@ export default function Slide() {
             keyboard={{
               enabled: true,
             }}
-            className="slideSwiper pb-17.5!"
+            className={styles.slideSwiper}
           >
             {slideData.map((item) => (
               <SwiperSlide key={item.id}>
-                <img className="w-full h-auto mb-5" src={item.imgSrc} alt={item.imgAlt}/>
-                <div className="font-bold text-4xl mb-10">{item.title}</div>
-                <p className="text-base mb-5 text-gray-500">{item.desc}</p>
+                <img src={item.imgSrc} />
+                <div className={styles.title}>{item.title}</div>
+                <p className={styles.desc}>{item.desc}</p>
               </SwiperSlide>
             ))}
           </Swiper>

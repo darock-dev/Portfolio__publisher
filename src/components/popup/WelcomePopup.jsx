@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./WelcomePopup.module.scss";
 import popupImg from "../../assets/images/main/popup_img.png";
 
 export default function WelcomePopup() {
@@ -34,16 +35,16 @@ export default function WelcomePopup() {
   if (!isVisible) return null;
 
   return (
-    <div className="hidden md:flex fixed top-32.5 right-[20%] z-9999 justify-center items-center">
-      <div className="bg-white w-90 max-w-[90%] rounded-[10px] shadow-lg overflow-hidden flex-col">
-        <div className="p-0 flex">
-          <img className="max-w-full h-auto" src={popupImg} alt="" />
+    <div className={styles.popupWrap}>
+      <div className={styles.popup}>
+        <div className={styles.content}>
+          <img src={popupImg} alt="" />
         </div>
 
-        <div className="p-0 bg-black flex">
-          <button className="px-3 py-2 border-r border-r-gray-600 bg-black text-white text-sm cursor-pointer w-[40%]" onClick={() => handleClose(1)}>오늘 하루 안 보기</button>
-          <button className="px-3 py-2 border-r border-r-gray-600 bg-black text-white text-sm cursor-pointer w-[40%]" onClick={() => handleClose(7)}>일주일간 안 보기</button>
-          <button className="px-3 py-2 bg-blue-500 text-white text-sm cursor-pointer w-[20%]" onClick={() => handleClose(0)}>
+        <div className={styles.footer}>
+          <button onClick={() => handleClose(1)}>오늘 하루 안 보기</button>
+          <button onClick={() => handleClose(7)}>일주일간 안 보기</button>
+          <button className={styles.closeBtn} onClick={() => handleClose(0)}>
             닫기
           </button>
         </div>

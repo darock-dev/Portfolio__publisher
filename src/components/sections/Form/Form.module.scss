@@ -1,0 +1,46 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.formSec {
+  @include section;
+  background-color: #fff;
+
+  .inner {
+    @include inner;
+    max-width: auto;
+  }
+
+  .titleWrap {
+    .title {
+      @include sectionTitle;
+
+      span {
+        color: $primary-color;
+      }
+    }
+
+    .subTitle {
+      @include sectionSubTitle;
+    }
+  }
+
+  .content {
+    .formWrap {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .formButtonWrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .errorMessage {
+      font-size: 14px;
+      color: red;
+      margin-bottom: 12px;
+    }
+  }
+}

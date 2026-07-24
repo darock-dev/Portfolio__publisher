@@ -1,0 +1,128 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.accordionMenuSec {
+  @include section;
+  background-color: #fff;
+
+  .inner {
+    @include inner;
+  }
+
+  .titleWrap {
+    .title {
+      @include sectionTitle;
+
+      span {
+        color: $primary-color;
+      }
+    }
+
+    .subTitle {
+      @include sectionSubTitle;
+    }
+  }
+
+  .content {
+    .menu {
+      padding: 32px 20px;
+      border-bottom: 1px solid $border-color;
+      cursor: pointer;
+
+      @media screen and (max-width: 1024px) {
+        padding: 24px 10px;
+
+      }
+
+      .title {
+        position: relative;
+        padding-right: 30px;
+        font-size: 28px;
+        font-weight: $font-bold;
+
+        &::after {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          content: "";
+          width: 26px;
+          height: 16px;
+          background-image: url('../../../assets/images/common/arrow_blue.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+          transition: all 0.3s ease;
+        }
+
+        @media screen and (max-width: 1024px) {
+          font-size: 20px;
+        }
+      }
+
+      .desc {
+        color: $desc-color;
+        font-size: 20px;
+        height: 0;
+        opacity: 0;
+        display: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        margin: 0 40px;
+
+        .imgWrap {
+          display: none;
+          position: relative;
+          width: 500px;
+          height: auto;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+
+          p {
+            @include overlayText;
+          }
+        }
+
+        @media screen and (max-width: 1024px) {
+          flex-direction: column;
+          margin: 0;
+          font-size: 16px;
+          gap: 20px;
+
+          .imgWrap {
+            width: 90%;
+            max-width: 500px;
+          }
+        }
+
+      }
+
+      &.active {
+        transition: all 0.3s ease;
+
+        .desc {
+          height: auto;
+          opacity: 1;
+          display: flex;
+          padding: 50px 0 20px 0;
+          transition: all 0.3s ease;
+
+          .imgWrap {
+            display: block;
+          }
+        }
+
+        .title {
+          &::after {
+            transform: translateY(-50%) rotate(180deg);
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+}
