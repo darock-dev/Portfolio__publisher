@@ -36,6 +36,10 @@ export default function Header() {
               <a href="#form-sec">Form</a>
             </li>
             <li>
+              <a href="#form-filter">Product Filter</a>
+            </li>
+            
+            <li>
               <a href="#contact-sec">Contact</a>
             </li>
           </ul>

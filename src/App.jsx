@@ -3,6 +3,7 @@ import WelcomePopup from "./components/popup/WelcomePopup";
 import AccordionMenu from "./components/sections/AccordionMenu/AccordionMenu";
 import Contact from "./components/sections/Contact/Contact";
 import CssAnimation from "./components/sections/CssAnimation/CssAnimation";
+import Filter from "./components/sections/Filter/Filter";
 import Form from "./components/sections/Form/Form";
 import MainVisual from "./components/sections/MainVisual/MainVisual";
 import Slide from "./components/sections/Slide/Slide";
@@ -19,6 +20,7 @@ function App() {
         <AccordionMenu />
         <Slide />
         <Form />
+        <Filter />
         <Contact />
       </MainLayout>
     </>

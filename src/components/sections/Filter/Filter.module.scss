@@ -1,0 +1,271 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.formFilter {
+  @include section;
+  background-color: $bg-gray;
+
+  .inner {
+    @include inner;
+    max-width: auto;
+  }
+
+  .titleWrap {
+    .title {
+      @include sectionTitle;
+
+      span {
+        color: $primary-color;
+      }
+    }
+
+    .subTitle {
+      @include sectionSubTitle;
+    }
+  }
+
+  .content {
+    .filterWrap {
+      width: 230px;
+      flex-shrink: 0;
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+
+      .filterTitle {
+        @media screen and (max-width: 768px) {
+          font-size: 24px;
+        }
+      }
+
+      .filterSubTitle {
+        font-size: 20px;
+        font-weight: 500;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #000;
+
+        @media screen and (max-width: 768px) {
+          font-size: 16px;
+        }
+      }
+
+      .filterAccordion {
+        width: 100%;
+
+        .accordionItem {
+          padding: 16px 0;
+          border-bottom: 1px solid #000;
+
+          @media screen and (max-width: 768px) {
+            padding: 10px 0;
+          }
+
+          .accordionTitle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+
+            @media screen and (max-width: 768px) {
+              font-size: 14px;
+            }
+          }
+
+          .accordionDesc {
+            margin: 30px 0;
+
+            .colorList {
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              gap: 24px;
+
+              .hiddenCheckbox {
+                position: absolute;
+                opacity: 0;
+                width: 0;
+                height: 0;
+
+                &:checked {
+                  +.colorOption {
+                    &::before {
+                      background-image: url('../../../../src/assets/images/icon/checked.png');
+                    }
+                  }
+                }
+              }
+
+              .colorOption {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                cursor: pointer;
+                font-size: 14px;
+                gap: 8px;
+
+                &::before {
+                  content: "";
+                  display: inline-block;
+                  width: 14px;
+                  height: 14px;
+                  background-image: url('../../../../src/assets/images/icon/unchecked.png');
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                }
+              }
+            }
+
+            .priceInput {
+              border: 1px solid #eaeaea;
+              padding: 10px 14px;
+              width: 100px;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+
+    .filterFooter {
+      button {
+        background-color: #000;
+        color: #fff;
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+        margin-top: 20px;
+
+        @media screen and (max-width: 768px) {
+          padding: 14px 0;
+        }
+      }
+    }
+
+    /* prod-list */
+    .prodListWrap {
+      display: flex;
+      gap: 60px;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+
+    .prodList {
+      width: 100%;
+    }
+
+    .prodListNone {
+      width: 100% !important;
+      padding: 160px 0px;
+    }
+
+    .prodTabmenu {
+      width: 100%;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      color: #555;
+      gap: 52px;
+      border-bottom: 1px solid #eaeaea;
+      margin-bottom: 20px;
+      font-size: 18px;
+
+      @media screen and (max-width: 768px) {
+        gap: 20px;
+        font-size: 14px;
+      }
+
+      .tabItem {
+        cursor: pointer;
+
+        &.active {
+          color: #000;
+          font-weight: 500;
+        }
+      }
+
+    }
+
+    .prodItemWrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+
+      @media screen and (max-width: 1024px) {
+        gap: 10px;
+      }
+
+      li {
+        display: flex;
+        justify-content: center;
+        width: calc((100% - 90px) / 4);
+        flex-shrink: 0;
+
+        @media screen and (max-width: 1024px) {
+          width: calc((100% - 10px) / 2);
+        }
+
+        .prodName {
+          font-size: 16px;
+          color: #555;
+          margin-top: 20px;
+
+          @media screen and (max-width: 768px) {
+            font-size: 14px;
+            margin-top: 10px;
+          }
+        }
+
+        .prodPrice {
+          font-size: 16px;
+          margin-top: 30px;
+
+          @media screen and (max-width: 768px) {
+            font-size: 14px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+          }
+        }
+
+        .prodImage {
+          width: fit-content;
+          overflow: hidden;
+          transition: all 0.2s ease-in-out;
+        }
+
+        .prodImage {
+          img {
+            width: 100%;
+
+            &:hover {
+              transform: scale(1.1);
+              transition: all 0.2s ease-in-out;
+            }
+          }
+        }
+
+        .prodColor {
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+          border: 1px solid #ddd;
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}
