@@ -4,7 +4,7 @@
 기획부터 디자인, 개발까지 **100% 1인 기여**한 반응형 포트폴리오 사이트
 
 - **[사용기술]**
- `HTML`, `TailwindCSS`, `JS`, `React`
+ `HTML`, `SCSS`, `JS`, `React`
 
 - **[코드 확인 GitHub 주소]**
   - https://github.com/darock-dev/Portfolio__publisher
@@ -27,6 +27,6 @@
     
     6.  반응형 사이트 → 반응형 HTML 설계 및 CSS 적용
     
-    7.  tailwindCSS를 사용하여 네이밍에 대한 고민을 덜어 스타일링 시간 단축
+    7.  SCSS를 사용하여 스타일링 시간 단축
     
     8.  이미지 요소를 생성형 AI로 제작하여 작업 시간 단축
